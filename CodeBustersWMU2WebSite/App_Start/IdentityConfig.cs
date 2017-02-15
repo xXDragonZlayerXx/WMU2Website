@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using CodeBustersWMU2WebSite.Models;
+using Task = System.Threading.Tasks.Task;
 
 namespace CodeBustersWMU2WebSite
 {

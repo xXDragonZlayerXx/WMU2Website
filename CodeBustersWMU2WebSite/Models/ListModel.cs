@@ -1,11 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace CodeBustersWMU2WebSite.Models
 {
-    public class Tasks
+    public class Task
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -25,5 +29,21 @@ namespace CodeBustersWMU2WebSite.Models
         [MaxLength(200)]
         public string Requirements { get; set; }
 
+    }
+
+    public class TaskService
+    {
+
+        readonly string baseUri = "http://localhost:53805/api/values/";
+
+        public List<Models.Task> GetTasks()
+        {
+            string uri = baseUri;
+            using (HttpClient httpClient = new HttpClient())
+            {
+                Task<String> response = httpClient.GetStringAsync(uri);
+                return JsonConvert.DeserializeObjectAsync<List<Models.Task>>(response.Result).Result;
+            }
+        }
     }
 }

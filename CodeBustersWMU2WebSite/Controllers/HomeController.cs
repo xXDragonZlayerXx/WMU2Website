@@ -11,7 +11,8 @@ namespace CodeBustersWMU2WebSite.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            TaskService ts = new TaskService();
+            return View(ts.GetTasks());
         }
 
         public ActionResult About()

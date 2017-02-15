@@ -30,6 +30,6 @@ namespace CodeBustersWMU2WebSite.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<CodeBustersWMU2WebSite.Models.Tasks> Tasks { get; set; }
+        public System.Data.Entity.DbSet<CodeBustersWMU2WebSite.Models.TaskService> Tasks { get; set; }
     }
 }

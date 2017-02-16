@@ -13,22 +13,14 @@ namespace CodeBustersWMU2WebSite.Models
 {
     public class Task
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+   
         public int TaskId { get; set; }
 
-        [Required]
-        [MaxLength(50)]
         public string BeginDateTime { get; set; }
-        [MaxLength(50)]
         public string DeadlineDateTime { get; set; }
 
-        [Required]
-        [MaxLength(50)]
         public string Title { get; set; }
 
-        [Required]
-        [MaxLength(200)]
         public string Requirements { get; set; }
 
     }
@@ -36,7 +28,7 @@ namespace CodeBustersWMU2WebSite.Models
     public class TaskService
     {
 
-        readonly string baseUri = "http://localhost:53805/api/values/getallTasks";
+        readonly string baseUri = "http://localhost:53805/api/tasks";
 
         public List<Models.Task> GetTasks()
         {
@@ -49,6 +41,7 @@ namespace CodeBustersWMU2WebSite.Models
 
         }
     }
+
     /*public class AssignmentService
     {
 

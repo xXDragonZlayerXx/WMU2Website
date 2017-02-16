@@ -34,7 +34,7 @@ namespace CodeBustersWMU2WebSite.Models
     public class TaskService
     {
 
-        readonly string baseUri = "http://localhost:53805/api/values/";
+        readonly string baseUri = "http://localhost:53805/api/values/getallTasks";
 
         public List<Models.Task> GetTasks()
         {
@@ -44,6 +44,23 @@ namespace CodeBustersWMU2WebSite.Models
                 Task<String> response = httpClient.GetStringAsync(uri);
                 return JsonConvert.DeserializeObjectAsync<List<Models.Task>>(response.Result).Result;
             }
+
+        }
+    }
+
+    public class AssignmentService
+    {
+        readonly string baseUri = "http://localhost:53805/api/values/getallassignments";
+        A
+        public List<AssignmentService> GetAssignment()
+        {
+            string uri = baseUri;
+            using (HttpClient httpClient = new HttpClient())
+            {
+                Task<String> response = httpClient.GetStringAsync(uri);
+                return JsonConvert.DeserializeObjectAsync<List<Models.>>(response.Result).Result;
+            }
+
         }
     }
 }

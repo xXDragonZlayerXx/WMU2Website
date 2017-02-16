@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CodeBustersWMU2WebSite.Models.Task>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BeginDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeadlineDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Requirements)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BeginDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeadlineDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Requirements)
+        </td>
+    </tr>
+    }
+
+</table>
